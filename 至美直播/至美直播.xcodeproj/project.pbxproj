@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2820836B1DB5CA6F00BD4BEA /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2820836A1DB5CA6F00BD4BEA /* IJKMediaFramework.framework */; };
 		282083D51DB5E24400BD4BEA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282083D41DB5E24400BD4BEA /* ImageIO.framework */; };
 		282083D71DB5E26C00BD4BEA /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282083D61DB5E26C00BD4BEA /* JavaScriptCore.framework */; };
 		282083D91DB5E28400BD4BEA /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 282083D81DB5E28400BD4BEA /* libicucore.tbd */; };
@@ -251,7 +250,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2820836A1DB5CA6F00BD4BEA /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		282083D41DB5E24400BD4BEA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		282083D61DB5E26C00BD4BEA /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		282083D81DB5E28400BD4BEA /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -772,7 +770,6 @@
 				28D1B3981DB08A6700F85C9E /* iflyMSC.framework in Frameworks */,
 				65BFDC7272E3E6279F9A73EC /* libPods-至美直播.a in Frameworks */,
 				282084811DB60E7C00BD4BEA /* MOBFoundation.framework in Frameworks */,
-				2820836B1DB5CA6F00BD4BEA /* IJKMediaFramework.framework in Frameworks */,
 				28D1B3821DB08A6700F85C9E /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				282084821DB60E7C00BD4BEA /* SMS_SDK.framework in Frameworks */,
 				28D1B34D1DB08A6700F85C9E /* libcrypto.a in Frameworks */,
@@ -2130,7 +2127,6 @@
 		28D1B8AB1DB4A81900F85C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2820836A1DB5CA6F00BD4BEA /* IJKMediaFramework.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
