@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BVQ-nW-XKq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ChatVC-->
+        <scene sceneID="G1s-bp-RQy">
+            <objects>
+                <viewController id="71q-tK-Ha7" customClass="LSChatVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cw1-Nf-jYr"/>
+                        <viewControllerLayoutGuide type="bottom" id="fSZ-3e-fyo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0tw-5e-MVJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r6R-11-UEJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="403"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="71q-tK-Ha7" id="oSu-u3-QKQ"/>
+                                    <outlet property="delegate" destination="71q-tK-Ha7" id="RRg-AR-ikg"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPW-qv-A3S">
+                                <rect key="frame" x="16" y="482" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-T3-eSi">
+                                <rect key="frame" x="34" y="541" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="发送"/>
+                                <connections>
+                                    <action selector="send:" destination="71q-tK-Ha7" eventType="touchUpInside" id="8wN-Uy-ouM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vx9-jB-bcc">
+                                <rect key="frame" x="218" y="541" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="观看直播"/>
+                                <connections>
+                                    <action selector="join:" destination="71q-tK-Ha7" eventType="touchUpInside" id="Mmu-l1-slf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR8-Bo-g2i">
+                                <rect key="frame" x="124" y="541" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="开始直播"/>
+                                <connections>
+                                    <action selector="create:" destination="71q-tK-Ha7" eventType="touchUpInside" id="2Q9-zf-B4Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKG-nc-wV8">
+                                <rect key="frame" x="297" y="541" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="退出直播"/>
+                                <connections>
+                                    <action selector="exitChat:" destination="71q-tK-Ha7" eventType="touchUpInside" id="1qB-H6-b8D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLx-UT-Ouw">
+                                <rect key="frame" x="34" y="571" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="获取信息"/>
+                                <connections>
+                                    <action selector="getUserCount:" destination="71q-tK-Ha7" eventType="touchUpInside" id="1qW-fk-dRP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r6R-11-UEJ" firstAttribute="top" secondItem="cw1-Nf-jYr" secondAttribute="bottom" id="1MN-iv-cjt"/>
+                            <constraint firstItem="r6R-11-UEJ" firstAttribute="leading" secondItem="0tw-5e-MVJ" secondAttribute="leading" id="PQE-Be-9Jb"/>
+                            <constraint firstAttribute="trailing" secondItem="r6R-11-UEJ" secondAttribute="trailing" id="iwj-E9-ItI"/>
+                            <constraint firstItem="fSZ-3e-fyo" firstAttribute="top" secondItem="r6R-11-UEJ" secondAttribute="bottom" constant="200" id="qIq-IJ-idj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4RF-Xr-4rn">
+                        <barButtonItem key="rightBarButtonItem" title="关闭" id="or7-ep-eVM">
+                            <connections>
+                                <action selector="cancel:" destination="71q-tK-Ha7" id="J4y-28-MFh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="content" destination="MPW-qv-A3S" id="5Oy-mN-ZTS"/>
+                        <outlet property="tableView" destination="r6R-11-UEJ" id="4l6-DU-xWs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3Y-Lz-R4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="-209"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ggh-13-eWb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BVQ-nW-XKq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKz-5x-EOj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="71q-tK-Ha7" kind="relationship" relationship="rootViewController" id="5fE-yU-oUh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWE-qP-jnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-588" y="-195"/>
+        </scene>
+    </scenes>
+</document>

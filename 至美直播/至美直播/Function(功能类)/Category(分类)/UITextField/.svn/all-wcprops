@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/LCSJ/!svn/ver/4581/LCSJ_IOS/driver/trunk/driver/driver/Category(%E5%88%86%E7%B1%BB)/UITextField
+END
+KCIdentiftyCardField.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LCSJ/!svn/ver/2538/LCSJ_IOS/driver/trunk/driver/driver/Category(%E5%88%86%E7%B1%BB)/UITextField/KCIdentiftyCardField.h
+END
+UITextField+Extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/LCSJ/!svn/ver/3470/LCSJ_IOS/driver/trunk/driver/driver/Category(%E5%88%86%E7%B1%BB)/UITextField/UITextField+Extension.h
+END
+KCIdentiftyCardField.m
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LCSJ/!svn/ver/3840/LCSJ_IOS/driver/trunk/driver/driver/Category(%E5%88%86%E7%B1%BB)/UITextField/KCIdentiftyCardField.m
+END
+UITextField+Extension.m
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/LCSJ/!svn/ver/4581/LCSJ_IOS/driver/trunk/driver/driver/Category(%E5%88%86%E7%B1%BB)/UITextField/UITextField+Extension.m
+END

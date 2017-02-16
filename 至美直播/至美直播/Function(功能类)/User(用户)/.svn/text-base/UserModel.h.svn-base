@@ -1,0 +1,77 @@
+//
+//  UserModel.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/28.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@interface UserModel : NSObject
+
+
+@property (nonatomic,copy) NSString *address;
+@property (nonatomic,assign) int finishOrrderNum;
+@property (nonatomic,assign) int finishOrderNum;
+@property (nonatomic,assign) int noFinishOrderNum;
+@property (nonatomic,assign) CGFloat cashAccount;
+@property (nonatomic,assign) CGFloat quotaAccount;
+//@property (nonatomic,assign) CGFloat totalAssets;
+@property(nonatomic,copy)NSString * hostCity;
+
+@property (nonatomic,assign) CGFloat integral;
+
+@property (nonatomic,copy) NSString *token;
+@property(nonatomic,copy)NSString * sessionId;
+
+
+@property (nonatomic,copy) NSString *headImg;
+@property (nonatomic,assign) CGFloat levelName;
+
+@property (nonatomic,copy) NSString *inviterTel;
+@property (nonatomic,copy) NSString *imToken;
+@property (nonatomic,copy) NSString *carOwnerMemberAuditStatus;
+@property (nonatomic,copy) NSString *consignerMemberAuditStatus;
+@property (nonatomic,copy) NSString *memberAuditStatus;
+@property (nonatomic,copy) NSString *isDriver;
+@property (nonatomic,copy) NSString *isCarOwner;;
+@property (nonatomic,copy) NSString *isConsigner;
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *realName;
+@property (nonatomic,copy) NSString *sex;
+@property (nonatomic,copy) NSString *logindatetime;
+@property (nonatomic,copy) NSString *isRealNameAuth;
+@property(nonatomic,copy)NSString * memberAuthStatus;
+@property (nonatomic,assign) BOOL isPayPassword;
+//@property (nonatomic,copy) NSString *authStatus;
+//@property (nonatomic,copy) NSString *driverNum;
+@property (nonatomic,copy) NSString *messageNum;
+//@property (nonatomic,assign) int carNum;
+@property (nonatomic,copy) NSString *carNum;
+
+@property (nonatomic,copy) NSString *userName;
+@property (nonatomic,copy) NSString *headPic;
+@property (nonatomic,copy) NSString *authStatus;
+//@property (nonatomic,assign) int totalAssets;
+@property (nonatomic,copy) NSString *totalAssets;
+//@property (nonatomic,assign) int driverNum;
+@property (nonatomic,copy) NSString *driverNum;
+@property (nonatomic,copy) NSString *mobile;
+//默认值为：2 （0：正常，1：锁定，2：初始化）;
+@property (nonatomic,copy) NSString *payPasswordStatus;
+
+@property (nonatomic,copy) NSString *sysMessageNum;
+@property (nonatomic,copy) NSString *orderMessageNum;
+
+@property (nonatomic,assign) int identify;
+
+
+//货源提醒
+@property (nonatomic,assign) BOOL invoiceMessageStatus;
+
+//语音提醒
+@property (nonatomic,assign) BOOL voiceMessageStatus;
+
+
+@end
+

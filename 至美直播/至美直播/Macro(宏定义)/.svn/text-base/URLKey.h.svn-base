@@ -1,0 +1,98 @@
+
+
+//
+//  URLKey.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/28.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#ifndef URLKey_h
+#define URLKey_h
+
+
+//md5加密串
+
+#define  KCMD5_Sault @"2016XiangJieChengGongKCwl"
+
+#define KCGet_AES_Key_URL @"decryptKey.do" 
+
+/// 基础地址
+//#define BASE_URL @"http://android.kuaichengwuliu.com/"
+//#define BASE_URL  @"http://101.200.122.69:80/apisys"
+//#define BASE_URL   @"http://192.168.1.128:8080/apisys/"
+//#define BASE_URL   @"http://192.168.1.60:8080/carrierAPI/"
+#define BASE_URL   @"http://101.201.78.184:8005/carrierAPI/"
+
+
+//轮播图
+#define KCSearchPicsURL @"snsInfoAction/queryBanner"
+
+
+//更新
+#define KCUpdateVersion_URL @"appVersionAction/checkVersion"
+
+//注册
+#define KCRegisterURL @"driverUserController/register"
+
+//登录
+#define KCLoginURL @"driverUserController/login"
+
+//退出
+#define KCLogoutURL @"driverUserController/logout"
+
+//修改密码时校验验证码
+#define KCVerificationCodeCheckURL	@"driverUserController/verificationCodeCheck"
+
+//发送验证码
+#define KCSendVerifyCodeURL @"driverUserController/sendVerifyCode"
+
+//语音验证码
+#define KCAudioCodeURL @"driverUserController/sendVoiceCode"
+
+//修改密码
+#define KCUpdatePassword @"driverUserController/updateUserPassword"
+
+
+#define KCLookBigPic_URL @"uploadController.do?showBigPic" //83
+
+// 认证资料上传
+#define KCMessageUpload_URL @"driverUserController/approveFileUpload"
+
+//查看认证详情
+#define KCDriverAuthDetainURL @"driverUserController/showApproveDetail"
+// 我的资料
+#define KCMeesage_URL @"driverUserController/refreshMe" //
+
+// 司机认证
+#define KCDirversAuthentication_URL @"driverUserController/approve"
+
+// 上传头像
+#define KCUploadHeader @"driverUserController/saveHeadPic"
+
+// 意见反馈
+#define KCFeedback_URL @"suggestsAction/saveSuggests"
+
+// 上传头像到文件服务器
+#define KCUploadHeadPicFile_URL @"driverUserController/headPicFileUpload"
+
+// 上传行驶证文件
+#define KCUplpoadCarID_URL @"vehicleController/drivingLicensePicFileUpload"
+
+// 车辆类型
+#define KCCarType_URL @"vehicleTypeAction/queryAllVehicleType"
+
+// 查询车辆
+#define KCSerchCar_URL @"vehicleController/selectAllVehicle"
+
+// 添加车辆
+#define KCAddCar_URL @"vehicleController/addVehicle"
+
+// 删除车辆
+#define KCDeeCar_URL @"vehicleController/deleteVehicle"
+
+// 修改车辆
+#define KCExitCar_URL @"vehicleController/updateVehicle"
+
+#endif /* URLKey_h */

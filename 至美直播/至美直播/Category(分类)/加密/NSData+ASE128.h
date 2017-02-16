@@ -1,0 +1,21 @@
+//
+//  NSData+ASE128.h
+//  YoukuCore
+//
+//  Created by zhenghaishu on 11/8/13.
+//  Copyright (c) 2013 Youku.com inc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+static Byte ivBuff[]   = {1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
+
+@interface NSData (ASE128)
+
+- (NSData *)AES128EncryptWithKey:(NSString *)key;   //加密
+- (NSData *)AES128DecryptWithKey:(NSString *)key;   //解密
+
+- (NSData *) stringToHexData:(NSString*)hexStr;
+- (NSString *)hexStringFromData:(NSData*)data;
+
+@end

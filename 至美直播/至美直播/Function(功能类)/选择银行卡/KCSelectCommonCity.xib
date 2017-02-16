@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Lra-bY-jj4" customClass="KCSelectCommonCity">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-vy-y73">
+                    <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-Aw-E5W">
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16452047413793103" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="L8b-ge-GCi"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KdU-VP-d4X">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="dataSource" destination="Lra-bY-jj4" id="UsR-UL-553"/>
+                                <outlet property="delegate" destination="Lra-bY-jj4" id="sRs-Bv-5ez"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="KdU-VP-d4X" firstAttribute="top" secondItem="rMk-Aw-E5W" secondAttribute="bottom" id="LzM-22-bF8"/>
+                        <constraint firstAttribute="trailing" secondItem="rMk-Aw-E5W" secondAttribute="trailing" id="N5D-eG-KgG"/>
+                        <constraint firstAttribute="trailing" secondItem="KdU-VP-d4X" secondAttribute="trailing" id="dIL-Qa-svI"/>
+                        <constraint firstItem="rMk-Aw-E5W" firstAttribute="top" secondItem="9vX-vy-y73" secondAttribute="top" id="hzA-fD-onL"/>
+                        <constraint firstItem="KdU-VP-d4X" firstAttribute="leading" secondItem="9vX-vy-y73" secondAttribute="leading" id="kXM-lc-Ixi"/>
+                        <constraint firstAttribute="height" constant="176" id="op6-qX-dTW"/>
+                        <constraint firstAttribute="bottom" secondItem="KdU-VP-d4X" secondAttribute="bottom" id="t6S-1j-jii"/>
+                        <constraint firstItem="rMk-Aw-E5W" firstAttribute="leading" secondItem="9vX-vy-y73" secondAttribute="leading" id="wAE-Fg-xei"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.21531758223281972" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9vX-vy-y73" firstAttribute="leading" secondItem="Lra-bY-jj4" secondAttribute="leading" id="EKX-HJ-bqG"/>
+                <constraint firstItem="9vX-vy-y73" firstAttribute="top" secondItem="Lra-bY-jj4" secondAttribute="top" id="vRU-t9-soM"/>
+                <constraint firstAttribute="trailing" secondItem="9vX-vy-y73" secondAttribute="trailing" id="xje-ey-KIa"/>
+            </constraints>
+            <connections>
+                <outlet property="heightConstrain" destination="op6-qX-dTW" id="MSZ-Zj-5b1"/>
+                <outlet property="myView" destination="9vX-vy-y73" id="NUi-3m-1LV"/>
+                <outlet property="tableView" destination="KdU-VP-d4X" id="ino-aD-380"/>
+            </connections>
+            <point key="canvasLocation" x="-80" y="81"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,33 @@
+//
+//  KCUserTool.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/29.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "Singleton.h"
+#import "UserModel.h"
+@interface KCUserTool : NSObject
+singalton_h(KCUserTool);
+@property(nonatomic,strong) UserModel *userModel;
+
+//保存用户信息
+-(void)saveUserInfo:(UserModel*)userInfo;
+
+//退出登录
+-(void)exit;
+/*
+ 0 货主
+ 1 司机
+ 2 车主 需要更换信息
+ */
+@property (nonatomic,assign,readonly) int identify;
+
+////表示是否登录
+//@property (nonatomic,assign) BOOL isLogin;
+
+-(void)save;
+
+@end

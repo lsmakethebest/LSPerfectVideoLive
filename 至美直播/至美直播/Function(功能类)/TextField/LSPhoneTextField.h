@@ -1,0 +1,15 @@
+//
+//  LSPhoneTextField.h
+//  kuaichengwuliu
+//  手机号
+//  Created by 刘松 on 16/5/31.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface LSPhoneTextField : UITextField
+
+@property (nonatomic,copy) void(^block)(BOOL completed);
+
+@end

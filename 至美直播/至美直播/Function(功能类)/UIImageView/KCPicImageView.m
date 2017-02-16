@@ -1,0 +1,112 @@
+//
+//  KCPicImageView.m
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/6/6.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "KCPicImageView.h"
+
+@interface KCPicImageView ()
+@property(nonatomic, weak) UIView *backView;
+@property(nonatomic, weak) UIActivityIndicatorView *tip;
+@end
+
+@implementation KCPicImageView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+    [self setupViews];
+  }
+  return self;
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+  if (self = [super initWithCoder:aDecoder]) {
+    [self setupViews];
+  }
+  return self;
+}
+- (void)setupViews {
+  self.userInteractionEnabled = YES;
+  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+  [tap addTarget:self action:@selector(bigPicture)];
+  [self addGestureRecognizer:tap];
+}
+- (void)bigPicture {
+  UIView *backView =
+      [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  [backView addGestureRecognizer:[[UITapGestureRecognizer alloc]
+                                     initWithTarget:self
+                                             action:@selector(tapClick)]];
+  self.backView = backView;
+
+  UIImageView *imageView = [[UIImageView alloc] init];
+  imageView.contentMode = UIViewContentModeScaleAspectFit;
+  backView.backgroundColor = [UIColor blackColor];
+  imageView.frame = [UIScreen mainScreen].bounds;
+  [backView addSubview:imageView];
+
+  UIActivityIndicatorView *tip = [[UIActivityIndicatorView alloc] init];
+  [backView addSubview:tip];
+  tip.center = backView.center;
+  self.tip = tip;
+  [tip startAnimating];
+
+  [[UIApplication sharedApplication].keyWindow addSubview:backView];
+  NSMutableDictionary *params = [NSMutableDictionary dictionary];
+  params[@"objKey"] = self.objectKey;
+
+  [[SDWebImageDownloader sharedDownloader]
+      downloadImageWithURL:[NSURL URLWithString:self.objectKey]
+      options:0
+      progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        DLog("%lf", receivedSize * 1.0 / expectedSize);
+      }
+      completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+          [self.tip stopAnimating];
+          imageView.image = image;
+          [self.tip removeFromSuperview];
+        });
+      }];
+  return;
+//  [HttpManager POST:KCLookBigPic_URL
+//      parameters:params
+//      success:^(NSDictionary *response) {
+//
+//        if ([ResponseModel mj_objectWithKeyValues:response].isSuccess) {
+//
+//          //[NSURL URLWithString:response[@"obj"][@"url"]]
+//          [[SDWebImageDownloader sharedDownloader]
+//              downloadImageWithURL:[NSURL
+//                                       URLWithString:@"http://scimg.jb51.net/"
+//                                                     @"allimg/160716/"
+//                                                     @"105-160G61F250436.jpg"]
+//              options:0
+//              progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                DLog(@"");
+//              }
+//              completed:^(UIImage *image, NSData *data, NSError *error,
+//                          BOOL finished) {
+//                DLog(@"sss==%@", error.localizedDescription);
+//                UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+//                imageView.image = image;
+//                [self.tip stopAnimating];
+//                [self.tip removeFromSuperview];
+//              }];
+//        }
+//      }
+//      failure:^(NSError *error){
+//
+//      }];
+}
+- (void)tapClick {
+  [self.backView removeFromSuperview];
+}
+
+- (void)layoutSubviews {
+  [super layoutSubviews];
+}
+@end

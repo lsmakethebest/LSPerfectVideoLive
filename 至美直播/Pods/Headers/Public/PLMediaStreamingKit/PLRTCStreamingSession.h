@@ -1,0 +1,1 @@
+../../../PLMediaStreamingKit/Pod/Library/include/PLRTCStreamingKit/PLRTCStreamingSession.h

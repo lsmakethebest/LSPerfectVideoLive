@@ -1,0 +1,51 @@
+
+
+
+
+//
+//  KCCommonButton.m
+//  driver
+//
+//  Created by 刘松 on 16/7/27.
+//  Copyright © 2016年 driver. All rights reserved.
+//
+
+#import "KCCommonButton.h"
+
+@implementation KCCommonButton
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    if (self=[super initWithFrame:frame]) {
+        [self setBackgroundImage:[UIImage imageNamed:@"blueBack"] forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage imageNamed:@"blueBackDisabled"] forState:UIControlStateDisabled];
+        [self setBackgroundImage:[UIImage imageNamed:@"blueBackDisabled"] forState:UIControlStateHighlighted];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor colorWithWhite:1.000 alpha:0.604] forState:UIControlStateDisabled];
+        self.layer.cornerRadius=3;
+        self.clipsToBounds=YES;
+    }
+    return self;
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self=[super initWithCoder:aDecoder]) {
+        [self setBackgroundImage:[UIImage imageNamed:@"blueBack"] forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage imageNamed:@"blueBackDisabled"] forState:UIControlStateDisabled];
+        [self setBackgroundImage:[UIImage imageNamed:@"blueBackDisabled"] forState:UIControlStateHighlighted];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor colorWithWhite:1.000 alpha:0.604] forState:UIControlStateDisabled];
+        self.layer.cornerRadius=3;
+        self.clipsToBounds=YES;
+    }
+    return self;
+}
+@end

@@ -1,0 +1,176 @@
+
+
+//
+//  AlipayTool.m
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/5/8.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "AlipayOrder.h"
+#import "AlipayTool.h"
+#import "DataSigner.h"
+#import "DataVerifier.h"
+//支付宝支付回调url
+#define ALIPAY_URL                                                             \
+  @"http://101.200.122.69:80/xiangJie/pubController/rechargeNotify.action"
+// 商户PID
+#define PARTNER @"2088511208960938"
+// 商户收款账号
+#define SELLER @"mafy@ycchn.com"
+// 商户私钥，pkcs8格式
+#define RSA_PRIVATE                                                            \
+  @"MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANhf5hmVgKOfQ0PsTgu8yDtk3" \
+  @"Uynz8y32UYQYgzpZD5Qf2J09w7/"                                               \
+  @"g0t9orfyo4REBYk1pn97B2kNztk9YO63NzhkBMSa4cUMm9XKZisRMHba07LDixrOhqUTAkPq"  \
+  @"YRc6/"                                                                     \
+  @"gPOaP0eD2GqWHETOdGSaA0pSYQY7wkxD7k7hHS75wXpAgMBAAECgYAN0gJGfBAdY1zOh9dsV"  \
+  @"ICNmqGv9cAGGXAdU4qPvJCUkluwlDv7j0J5neq4yRy8pAOegfjCh78vbJxbr9nzJWy3ZUkpg"  \
+  @"TUXsGqi+b48WgWY2xlig7l7PVC8vi/dtiC98Xm6/"                                  \
+  @"LfjU0SRreDxVlR4JkoOAH5xkTrkL2kfh+c5Hh4rAQJBAPDejnlTKm6t6B/"                \
+  @"qmt4H04OnQQFckXgItJMguOzhJHaEjDpKbGpyXY4t6JT7NRAfmkWXaxn2ZlzHL04YxyHw0tE"  \
+  @"CQQDl93CS53hmQd81uPVWJKudfRJoxYiOJUJkch9bCoYkBT3xJUotz1nS3OmnWngivpW3Bj6"  \
+  @"wLIhE2mZk37CzFFeZAkEAkDN9Mk9C0P4WQL1QN+"                                   \
+  @"qRi3jfJvSHNkhn6sklTNNA5B9YYDFcFKIhNlRvsHlv/"                               \
+  @"BYfYthSyzlDcPnibSvSU5R8cQJAJRb1dxwSFRwGrhl4qD4d17a2Y2OIlLR5ss2dNQfLfr/"    \
+  @"Br8T948mPiSzMGovC2Ie4id5d+fgUulYnMZnKW/"                                   \
+  @"ep8QJAJFA8Zr6+V2OTt5RIlp9LPA2cLMgNa3zCRvOJhgMHe5u0w+YMSFoCOPW9K+"          \
+  @"B0MeYahLrW839FF+btXISADyMuJw=="
+// 支付宝公钥
+#define RSA_PUBLIC                                                             \
+  @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/"                     \
+  @"y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/"   \
+  @"PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/"           \
+  @"B5KsiNG9zpgmLCUYuLkxpLQIDAQAB"
+
+ static NSString *appScheme = @"alipay2088511208960938driver";
+static AlipayTool *instance=nil;
+@implementation AlipayTool
++ (instancetype)sharedAlipayTool
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [super allocWithZone:zone];
+    });
+    return instance;
+}
+
+
+- (void)
+startPayWithOrderStringWithTradeNO:(NSString *)tradeNO
+                       productName:(NSString *)productName
+                productDescription:(NSString *)productDescription
+                             price:
+                                 (NSString *)
+                                     price { //应用注册scheme,在AlixPayDemo-Info.plist定义URL
+  NSString *orderSpec = [self getOrderStringWithTradeNO:tradeNO
+                                            productName:productDescription
+                                     productDescription:productDescription
+                                                  price:price];
+
+  //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
+  id<DataSigner> signer = CreateRSADataSigner(RSA_PRIVATE);
+  NSString *signedString = [signer signString:orderSpec];
+
+  //将签名成功字符串格式化为订单字符串,请严格按照该格式
+  NSString *orderString = nil;
+  if (signedString != nil) {
+    orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
+                                             orderSpec, signedString, @"RSA"];
+
+    DLog(@"sdjflsdjf====%@", orderString);
+    [[AlipaySDK defaultService] payOrder:orderString
+                              fromScheme:appScheme
+                                callback:^(NSDictionary *resultDic) {
+                                  [self handleResultWithDic:resultDic];
+                                }];
+  }
+}
+- (void)startPayWithOrderStringWithOrdertring:
+    (NSString *)orderString { //应用注册scheme,在AlixPayDemo-Info.plist定义URL
+  // types
+  
+  [[AlipaySDK defaultService] payOrder:orderString
+                            fromScheme:appScheme
+                              callback:^(NSDictionary *resultDic) {
+                                [self handleResultWithDic:resultDic];
+                              }];
+}
+
+- (NSString *)getOrderStringWithTradeNO:(NSString *)tradeNO
+                            productName:(NSString *)productName
+                     productDescription:(NSString *)productDescription
+                                  price:(NSString *)price {
+  AlipayOrder *order = [[AlipayOrder alloc] init];
+  order.partner = PARTNER;
+  order.seller = SELLER;
+  order.tradeNO = tradeNO;
+  order.productName = productName;
+  order.productDescription = productDescription;
+  order.amount = price;
+  order.notifyURL = ALIPAY_URL;
+
+  order.service = @"mobile.securitypay.pay";
+  order.paymentType = @"1";
+  order.inputCharset = @"utf-8";
+  order.itBPay = @"30m";
+  order.showUrl = @"m.alipay.com";
+
+  //将商品信息拼接成字符串
+  NSString *orderSpec = [order description];
+  DLog(@"orderSpec = %@", orderSpec);
+
+  return orderSpec;
+}
+- (void)handleSourceApplicationResult:(NSURL *)url {
+  //调用其他SDK，例如支付宝SDK等
+  if ([url.host isEqualToString:@"safepay"]) {
+    //跳转支付宝钱包进行支付，处理支付结果
+    [[AlipaySDK defaultService]
+        processOrderWithPaymentResult:url
+                      standbyCallback:^(NSDictionary *resultDic) {
+                        [self handleResultWithDic:resultDic];
+                      }];
+  }
+}
+#pragma mark - 私有方法处理支付结果
+- (void)handleResultWithDic:(NSDictionary *)resultDic {
+  NSLog(@"result = %@", resultDic);
+  NSString *resultStatus = resultDic[@"resultStatus"];
+  if ([resultStatus isEqualToString:@"9000"]) {
+      [KCNotificationCenter postNotificationName:KCKCPaySuccessNotification object:nil];
+    dispatch_after(
+        dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)),
+        dispatch_get_main_queue(), ^{
+          [MBProgressHUD showSuccess:@"支付成功"];
+        });
+    //通知刷新其他界面
+  } else {
+    // 判断resultStatus 为非"9000"则代表可能支付失败
+    // "8000"代表支付结果因为支付渠道原因或者系统原因还在等待支付结果确认，最终交易是否成功以服务端异步通知为准（小概率状态）
+    if ([resultStatus isEqualToString:@"8000"]) {
+      dispatch_after(
+          dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)),
+          dispatch_get_main_queue(), ^{
+            [MBProgressHUD showSuccess:@"支付结果确认中"];
+          });
+      //通知刷新其他界面
+    } else {
+      // 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误
+      dispatch_after(
+          dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)),
+          dispatch_get_main_queue(), ^{
+            [MBProgressHUD showError:@"支付失败"];
+          });
+    }
+  }
+}
+@end

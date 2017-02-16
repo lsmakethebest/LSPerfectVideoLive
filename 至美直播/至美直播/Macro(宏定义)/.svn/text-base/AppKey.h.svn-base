@@ -1,0 +1,54 @@
+
+
+//
+//  AppKey.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/28.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#ifndef AppKey_h
+#define AppKey_h
+
+
+// 常量
+// 天气的 keys
+#define WEATHER_APPKEY @"17505"
+#define WEATHER_SIGN @"5b76a6d99e31eb00fdcef4403aa20226"
+
+//友盟key
+#define  UMKey @"5795bd69e0f55a182e0010c5"
+
+#define WeatherChangedNotication @"WeatherChangedNoticationKey"
+
+//微信key
+#define WXAppId @"wxfc5d3ec3d4c69136"
+#define WXAppSecret  @"a8f1e63f7ffb2a0f08b1dfb59cfe337e"
+
+//QQ
+#define QQAppID  @"1105247162"
+#define QQKey @"CSHbQkcC5pLgiDJz"
+
+//微博
+#define SinaKey @"2288637120"
+#define SinaSecret @"e82f679874f97e7f7909034ff218fb17"
+#define SinaRedirectURL @"https://api.weibo.com/oauth2/default.html"
+
+//百度地图
+#define BDKey @"0mD9GwTwGft7DVbSUCDOgi0i"
+
+#define KCWebAppStoreURL @"https://itunes.apple.com/cn/app/kuai-cheng-wu-liu/id1104582018?mt=8"
+
+#define KCAppStoreURL @"itms-apps://itunes.apple.com/cn/app/kuai-cheng-wu-liu/id1104582018?mt=8"
+
+#define KCPrivateKey @"123456kcwl654321"
+
+
+
+
+
+
+
+
+#endif /* AppKey_h */

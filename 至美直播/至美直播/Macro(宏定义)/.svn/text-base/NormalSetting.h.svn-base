@@ -1,0 +1,32 @@
+
+
+//
+//  NormalSetting.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/6/1.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#ifndef NormalSetting_h
+#define NormalSetting_h
+
+
+/// 客服电话
+#define KCCALL_PHONE_NUMBER  @"4001615656"
+
+#define KCVersionCode @"20"
+
+
+#define KCCarStatus1 @"1"   //已成交( 待配车)
+#define KCCarStatus2 @"2,3"   //运输中(待转货,待卸货)
+#define KCCarStatus3 @"4,5"   //待结算
+#define KCCarStatus4 @"6"      //待支付
+#define KCCarStatus5 @"7,8,9"   //已完成
+#define KCCarStatus6 @"-1"    //已取消
+
+#define KCVersion  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+
+
+#endif /* NormalSetting_h */

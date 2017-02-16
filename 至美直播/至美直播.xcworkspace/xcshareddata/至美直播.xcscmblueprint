@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8D8B071759170C83B5DE0F10CC307D4650EF8C57",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D37F776B7F5F848EC37E411A0C67D8B69C2CD31A" : 9223372036854775807,
+    "8D8B071759170C83B5DE0F10CC307D4650EF8C57" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9CCC091D-5766-434B-BA8D-3B9873FE25DA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D37F776B7F5F848EC37E411A0C67D8B69C2CD31A" : "LSStatusBarHUD\/",
+    "8D8B071759170C83B5DE0F10CC307D4650EF8C57" : "LSPerfectVideoLive\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "至美直播",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "至美直播\/至美直播.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lsmakethebest\/LSPerfectVideoLive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8D8B071759170C83B5DE0F10CC307D4650EF8C57"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lsmakethebest\/LSStatusBarHUD.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D37F776B7F5F848EC37E411A0C67D8B69C2CD31A"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+
+
+
+//
+//  KCUserTool.m
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/29.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "KCUserTool.h"
+#import "UserModel.h"
+
+#define UserInfoKey @"USERINFO"
+
+@interface KCUserTool ()
+
+@end
+@implementation KCUserTool
+
+singalton_m(KCUserTool);
+
+-(instancetype)init
+{
+    if (self=[super init]) {
+        self.userModel= [UserModel mj_objectWithKeyValues: KCUserDefaultGetObjectForKey(UserInfoKey)];
+        
+    }
+    return self;
+}
+//保存用户信息
+-(void)saveUserInfo:(UserModel*)userInfo
+{
+    self.userModel=userInfo;
+    KCUserDefaultSetObjectWithKey([self.userModel mj_keyValues], UserInfoKey);
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+//退出登录
+-(void)exit
+{
+    self.userModel = nil;
+    [self  saveUserInfo:nil];
+}
+/*
+ 0 货主
+ 1 司机
+ 2 车主 需要更换信息
+ */
+-(int)identify
+{
+    return self.userModel.identify;
+}
+
+-(void)save
+{
+    KCUserDefaultSetObjectWithKey([self.userModel mj_keyValues], UserInfoKey);
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+
+@end

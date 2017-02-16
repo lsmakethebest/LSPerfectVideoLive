@@ -1,0 +1,95 @@
+
+
+//
+//  KCIdentiftyCardField.m
+//  driver
+//
+//  Created by 刘松 on 16/7/14.
+//  Copyright © 2016年 driver. All rights reserved.
+//
+
+#import "KCIdentiftyCardField.h"
+
+@interface KCIdentiftyCardField ()
+
+@property(nonatomic, copy) NSString *lastText;
+@end
+@implementation KCIdentiftyCardField
+
+- (instancetype)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+    [self setupViews];
+  }
+  return self;
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+  if (self = [super initWithCoder:aDecoder]) {
+    [self setupViews];
+  }
+  return self;
+}
+- (void)setupViews {
+  self.lastText = @"";
+  [[NSNotificationCenter defaultCenter]
+      addObserver:self
+         selector:@selector(textChange)
+             name:UITextFieldTextDidChangeNotification
+           object:self];
+}
+- (BOOL)validateCard:(NSString *)textString {
+  NSString *number = @"^[0-9]{1,18}";
+  NSPredicate *numberPre =
+      [NSPredicate predicateWithFormat:@"SELF MATCHES %@", number];
+  return [numberPre evaluateWithObject:textString];
+}
+- (BOOL)validateXX:(NSString *)textString {
+  NSString *number = @"^[0-9xX]{1,18}";
+  NSPredicate *numberPre =
+      [NSPredicate predicateWithFormat:@"SELF MATCHES %@", number];
+  return [numberPre evaluateWithObject:textString];
+}
+
+- (void)textChange {
+  NSString *str = self.text;
+  if (str.length > self.lastText.length) { //新增
+    NSString *footer = [self.text substringFromIndex:self.lastText.length];
+    if (self.lastText.length >= 17) {
+      if ([self validateXX:footer]) {
+        self.lastText = self.text;
+      } else {
+        self.text = self.lastText;
+      }
+
+    } else {
+      if ([self validateCard:footer]) {
+        self.lastText = self.text = str;
+
+      } else {
+        self.text = self.lastText;
+      }
+    }
+
+    if (self.text.length >= 18) {
+      self.lastText = self.text = [self.text substringToIndex:18];
+    } else {
+    }
+  } else { //删除87
+    self.lastText = str;
+      
+  }
+    [self performCardBlock:self.text.length>=18];
+}
+
+-(void)performCardBlock:(BOOL)enabled
+{
+    if (self.cardBlock) {
+        self.cardBlock(enabled);
+    }
+}
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+@end

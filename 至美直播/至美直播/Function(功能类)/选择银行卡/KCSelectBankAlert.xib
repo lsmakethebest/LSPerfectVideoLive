@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Lra-bY-jj4" customClass="KCSelectBankAlert">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-vy-y73">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="更换支付方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgd-2W-cok">
+                            <frame key="frameInset" minX="12" minY="12" width="108" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="26" id="Enu-ow-xzG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.47450980392156861" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-Aw-E5W">
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16452047413793103" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="L8b-ge-GCi"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LR-iv-JEg">
+                            <frame key="frameInset" minX="270" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="gmz-av-BRl"/>
+                                <constraint firstAttribute="width" constant="50" id="yEc-Rf-bIA"/>
+                            </constraints>
+                            <state key="normal" image="cancel"/>
+                            <connections>
+                                <action selector="cancel:" destination="Lra-bY-jj4" eventType="touchUpInside" id="8bY-H4-H5U"/>
+                            </connections>
+                        </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KdU-VP-d4X">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="dataSource" destination="Lra-bY-jj4" id="UsR-UL-553"/>
+                                <outlet property="delegate" destination="Lra-bY-jj4" id="sRs-Bv-5ez"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Kgd-2W-cok" firstAttribute="top" secondItem="9vX-vy-y73" secondAttribute="top" constant="12" id="4no-CS-jsd"/>
+                        <constraint firstItem="rMk-Aw-E5W" firstAttribute="top" secondItem="Kgd-2W-cok" secondAttribute="bottom" constant="12" id="FWD-gy-mZi"/>
+                        <constraint firstItem="Kgd-2W-cok" firstAttribute="leading" secondItem="9vX-vy-y73" secondAttribute="leading" constant="12" id="Jpp-7o-qAS"/>
+                        <constraint firstItem="KdU-VP-d4X" firstAttribute="top" secondItem="rMk-Aw-E5W" secondAttribute="bottom" id="LzM-22-bF8"/>
+                        <constraint firstAttribute="trailing" secondItem="rMk-Aw-E5W" secondAttribute="trailing" id="N5D-eG-KgG"/>
+                        <constraint firstAttribute="trailing" secondItem="KdU-VP-d4X" secondAttribute="trailing" id="dIL-Qa-svI"/>
+                        <constraint firstItem="KdU-VP-d4X" firstAttribute="leading" secondItem="9vX-vy-y73" secondAttribute="leading" id="kXM-lc-Ixi"/>
+                        <constraint firstAttribute="height" constant="138" id="o71-9g-N8d"/>
+                        <constraint firstAttribute="trailing" secondItem="2LR-iv-JEg" secondAttribute="trailing" id="sFN-Ct-Xcv"/>
+                        <constraint firstAttribute="bottom" secondItem="KdU-VP-d4X" secondAttribute="bottom" id="t6S-1j-jii"/>
+                        <constraint firstItem="rMk-Aw-E5W" firstAttribute="leading" secondItem="9vX-vy-y73" secondAttribute="leading" id="wAE-Fg-xei"/>
+                        <constraint firstItem="2LR-iv-JEg" firstAttribute="top" secondItem="9vX-vy-y73" secondAttribute="top" id="zFf-Qn-rgg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.21531758223281972" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9vX-vy-y73" firstAttribute="leading" secondItem="Lra-bY-jj4" secondAttribute="leading" id="EKX-HJ-bqG"/>
+                <constraint firstAttribute="bottom" secondItem="9vX-vy-y73" secondAttribute="bottom" id="JwJ-rW-5Zq"/>
+                <constraint firstAttribute="trailing" secondItem="9vX-vy-y73" secondAttribute="trailing" id="xje-ey-KIa"/>
+            </constraints>
+            <connections>
+                <outlet property="bottomLayout" destination="JwJ-rW-5Zq" id="L1X-W4-kHM"/>
+                <outlet property="heightConstrain" destination="o71-9g-N8d" id="kxi-L0-a3j"/>
+                <outlet property="myView" destination="9vX-vy-y73" id="NUi-3m-1LV"/>
+                <outlet property="tableView" destination="KdU-VP-d4X" id="ino-aD-380"/>
+                <outlet property="titleLabel" destination="Kgd-2W-cok" id="NmL-OQ-c5i"/>
+            </connections>
+            <point key="canvasLocation" x="-120" y="194"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel" width="13" height="13"/>
+    </resources>
+</document>

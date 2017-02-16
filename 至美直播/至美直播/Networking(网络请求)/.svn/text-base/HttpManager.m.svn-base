@@ -1,0 +1,280 @@
+
+
+#import "BaseResponseModel.h"
+#import "HttpManager.h"
+#import "UserModel.h"
+
+#import "NSString+Security.h"
+
+@implementation HttpManager
+
+#pragma mark-- 项目中POST请求
++ (AFHTTPRequestOperation *)POST:(NSString *)url
+                      parameters:(NSDictionary *)params
+                         success:(Success)success
+                         failure:(Failure)failure {
+  AFHTTPRequestOperationManager *manager =
+      [AFHTTPRequestOperationManager manager];
+
+  manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+  [manager.responseSerializer.acceptableContentTypes
+      setByAddingObject:@"text/html"];
+  // 设置超时时间
+  [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+  manager.requestSerializer.timeoutInterval = 15.f;
+  [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+  // manager.securityPolicy = [self customSecurityPolicy];
+
+  DLog(@"params:%@", params);
+  NSString *newURL = StringFormat(BASE_URL, url);
+  [self setCookie:newURL];
+  DLog(@"URL=====%@", newURL);
+  AFHTTPRequestOperation *operation = [manager POST:newURL
+      parameters:params
+      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *dict = [self dictionaryWithData:responseObject];
+        DLog(@"%@的请求结果是=====:%@", newURL, dict);
+
+        if ([[ResponseModel mj_objectWithKeyValues:dict]
+                    .code isEqualToString:@"000000009"]) {
+          //          [UIToast showMessage:@"该账户已在别的设备登录"];
+          [[KCUserTool sharedKCUserTool] saveUserInfo:nil];
+          [KCNotificationCenter
+              postNotificationName:KCOtherDeviceLogoutNotification
+                            object:nil];
+          [KCNotificationCenter postNotificationName:KCLogoutNotification
+                                              object:nil];
+          return;
+        }
+        if (success) {
+          success(dict);
+        }
+      }
+      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误:%@", error);
+        [MBProgressHUD hideHUD];
+        //        [MBProgressHUD showError:error.localizedDescription];
+        if (failure) {
+          failure(error);
+          [UIToast showMessage:@"网络异常，请检查网络"];
+          return;
+        }
+        if (![operation isCancelled]) {
+          [UIToast showMessage:@"网络异常，请检查网络"];
+        }
+      }];
+
+  return operation;
+}
+#pragma mark-- 正常POST请求
++ (AFHTTPRequestOperation *)POSTNormalWithURLString:(NSString *)url
+                                         parameters:(NSDictionary *)params
+                                            success:(Success)success
+                                            failure:(Failure)failure {
+  AFHTTPRequestOperationManager *manager =
+      [AFHTTPRequestOperationManager manager];
+
+  manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+  [manager.responseSerializer.acceptableContentTypes
+      setByAddingObject:@"text/html"];
+  // 设置超时时间
+  [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+  manager.requestSerializer.timeoutInterval = 15.f;
+  [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+  //    manager.securityPolicy = [self customSecurityPolicy];
+
+  DLog(@"params:%@", params);
+  DLog(@"URL=====%@", url);
+  [self setCookie:url];
+
+  AFHTTPRequestOperation *operation = [manager POST:url
+      parameters:params
+      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *dict = [self dictionaryWithData:responseObject];
+        DLog(@"请求结果=====:%@", dict);
+
+        if (success) {
+          success(dict);
+        }
+
+      }
+      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误:%@", error);
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showError:error.localizedDescription];
+        if (failure) {
+          failure(error);
+          return;
+        }
+
+        if (![operation isCancelled]) {
+          [MBProgressHUD showError:@"网络异常，请检查网络"];
+        }
+      }];
+
+  return operation;
+}
+#pragma mark - 上传图片
++ (AFHTTPRequestOperation *)uploadImage:(UIImage *)image
+                                    URL:(NSString *)URL
+                                success:(Success)success
+                                failure:(Failure)failure {
+
+  NSString *newUrl = StringFormat(BASE_URL, URL);
+
+  AFHTTPRequestOperationManager *manager =
+      [AFHTTPRequestOperationManager manager];
+
+  manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+  [manager.responseSerializer.acceptableContentTypes
+      setByAddingObject:@"text/html"];
+  //设置cookie
+  [self setCookie:newUrl];
+
+  [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+  manager.requestSerializer.timeoutInterval = 15.f;
+  [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+  AFHTTPRequestOperation *operation = [manager POST:newUrl
+      parameters:nil
+      constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+
+        //根据当前时刻，为图片起名
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyyMMddHHmmssSSS";
+
+        //图片压缩，并将图片转换成data
+        NSData *imagedata = [self dataCompressWithImage:image targetWidth:300];
+        NSString *str = [formatter stringFromDate:[NSDate date]];
+        NSString *fileName = [NSString stringWithFormat:@"%@.png", str];
+
+        [formData appendPartWithFileData:imagedata
+                                    name:@"fileName"
+                                fileName:fileName
+                                mimeType:@"image/png"];
+
+      }
+      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        NSDictionary *dict = [self dictionaryWithData:responseObject];
+        DLog(@"请求结果=====:%@", dict);
+        if (dict == nil) {
+          DLog(@"请求错误信息解码===%@",
+               [[NSString alloc] initWithData:responseObject
+                                     encoding:NSUTF8StringEncoding]);
+        }
+        if (success) {
+          success(dict);
+        }
+      }
+      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD hideHUD];
+        DLog(@"error:%@", error);
+        if (failure) {
+          failure(error);
+        }
+        if (![operation isCancelled]) {
+          [UIToast showMessage:@"网络异常，请检查网络"];
+        }
+      }];
+
+  return operation;
+}
+
++ (void)setCookie:(NSString *)newUrl {
+  // 定义 cookie 要设定的 host
+  NSURL *cookieHost = [NSURL URLWithString:newUrl];
+  if ([KCUserTool sharedKCUserTool].userModel) {
+
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = [KCUserTool sharedKCUserTool].userModel.token;
+    dic[@"token_type"] = @"ios";
+    dic[@"sessionId"] = [KCUserTool sharedKCUserTool].userModel.sessionId;
+
+    [dic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+      // 设定 cookie
+      NSHTTPCookie *cookie = [NSHTTPCookie
+          cookieWithProperties:[NSDictionary
+                                   dictionaryWithObjectsAndKeys:
+                                       [cookieHost host], NSHTTPCookieDomain,
+                                       [cookieHost path], NSHTTPCookiePath, key,
+                                       NSHTTPCookieName, obj, NSHTTPCookieValue,
+                                       nil]];
+      [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+
+    }];
+  }
+}
+#pragma mark - 将图片压缩成data
+/// 图像压缩 -> 压缩成data
++ (NSData *)dataCompressWithImage:(UIImage *)sourceImage
+                      targetWidth:(float)defineWidth {
+  CGSize imageSize = sourceImage.size;
+  float width = imageSize.width;
+  float height = imageSize.height;
+  float targetWidth = defineWidth;
+  float targetHeight = (targetWidth / width) * height;
+  UIGraphicsBeginImageContext(CGSizeMake(targetWidth, targetHeight));
+  [sourceImage drawInRect:CGRectMake(0, 0, targetWidth, targetHeight)];
+  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+  NSData *data = UIImagePNGRepresentation(newImage);
+  return data;
+}
+
+#pragma mark - 安全策略
++ (AFSecurityPolicy *)customSecurityPolicy {
+  NSString *cerPath =
+      [[NSBundle mainBundle] pathForResource:@"api_client" ofType:@"cer"];
+  NSData *certData = [NSData dataWithContentsOfFile:cerPath];
+  AFSecurityPolicy *securityPolicy =
+      [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+  [securityPolicy setAllowInvalidCertificates:NO];
+  [securityPolicy setPinnedCertificates:@[ certData ]];
+
+  return securityPolicy;
+}
+
+#pragma mark - NSData转化为字典
++ (NSDictionary *)dictionaryWithData:(NSData *)data {
+  NSDictionary *dictionary =
+      [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+  if (dictionary) {
+    return dictionary;
+  }
+  return nil;
+}
+
++ (id)setPublicParams:(id)params {
+
+  NSMutableDictionary *newParams =
+      [[NSMutableDictionary alloc] initWithDictionary:params];
+  [newParams setValue:KCBundleVersion forKey:@"version"];
+  for (NSString *key in params) {
+    [newParams setValue:params[key] forKey:key];
+  }
+  return newParams;
+}
++ (void)RequestAudioCodeWithPhone:(NSString *)phone {
+
+  NSMutableDictionary *params = [NSMutableDictionary dictionary];
+  params[@"mobile"] = phone;
+  [self POST:KCAudioCodeURL
+      parameters:params
+      success:^(NSDictionary *response) {
+        if ([ResponseModel mj_objectWithKeyValues:response].isSuccess) {
+          [UIAlertView showWithTitle:@"验证码将以电话形式通知您,请保持电话通畅"
+                             message:@"如未收到,请一分钟后再试"
+                   cancelButtonTitle:@"知道了"
+                   otherButtonTitles:nil
+                               block:^(NSInteger buttonIndex){
+
+                               }];
+
+        } else {
+          [UIToast showMessage:response[@"message"]];
+        }
+      }
+      failure:^(NSError *error){
+
+      }];
+}
+@end

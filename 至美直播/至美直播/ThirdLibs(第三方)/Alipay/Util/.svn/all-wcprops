@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util
+END
+base64.m
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/base64.m
+END
+MD5DataSigner.m
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/MD5DataSigner.m
+END
+RSADataSigner.m
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/RSADataSigner.m
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/config.h
+END
+DataVerifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/DataVerifier.h
+END
+NSDataEx.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/NSDataEx.h
+END
+DataVerifier.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/DataVerifier.m
+END
+RSADataVerifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/RSADataVerifier.h
+END
+NSDataEx.m
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/NSDataEx.m
+END
+RSADataVerifier.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/RSADataVerifier.m
+END
+DataSigner.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/DataSigner.h
+END
+openssl_wrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/openssl_wrapper.h
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/base64.h
+END
+DataSigner.m
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/DataSigner.m
+END
+RSADataSigner.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/RSADataSigner.h
+END
+MD5DataSigner.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/MD5DataSigner.h
+END
+openssl_wrapper.m
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/Alipay/Util/openssl_wrapper.m
+END

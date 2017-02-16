@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DBb-Ta-KAd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="r1h-rm-0rr">
+            <objects>
+                <viewController id="DBb-Ta-KAd" customClass="LSLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bKJ-AY-fnu"/>
+                        <viewControllerLayoutGuide type="bottom" id="5xO-1D-GMw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vmi-Ut-oIp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1j-A5-D27">
+                                <rect key="frame" x="30" y="547" width="315" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCl-qu-bCE">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="60"/>
+                                        <state key="normal" image="login_ico_weibo"/>
+                                        <connections>
+                                            <action selector="login:" destination="DBb-Ta-KAd" eventType="touchUpInside" id="5CA-yb-YhJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLm-y2-aj2">
+                                        <rect key="frame" x="79" y="0.0" width="78.5" height="60"/>
+                                        <state key="normal" image="login_ico_wechat"/>
+                                        <connections>
+                                            <action selector="login:" destination="DBb-Ta-KAd" eventType="touchUpInside" id="6Bm-q7-ghY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPA-QU-SMc">
+                                        <rect key="frame" x="157.5" y="0.0" width="79" height="60"/>
+                                        <state key="normal" image="login_ico_mobile"/>
+                                        <connections>
+                                            <action selector="login:" destination="DBb-Ta-KAd" eventType="touchUpInside" id="F9V-bL-FHY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-qR-Q6g">
+                                        <rect key="frame" x="236.5" y="0.0" width="78.5" height="60"/>
+                                        <state key="normal" image="login_ico_qq"/>
+                                        <connections>
+                                            <action selector="login:" destination="DBb-Ta-KAd" eventType="touchUpInside" id="Ysq-Od-uil"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KpQ-qR-Q6g" firstAttribute="top" secondItem="MCl-qu-bCE" secondAttribute="top" id="0Fz-U0-vXX"/>
+                                    <constraint firstItem="KpQ-qR-Q6g" firstAttribute="height" secondItem="MCl-qu-bCE" secondAttribute="height" id="2c1-se-rVb"/>
+                                    <constraint firstItem="PPA-QU-SMc" firstAttribute="leading" secondItem="DLm-y2-aj2" secondAttribute="trailing" id="33g-Uf-K7r"/>
+                                    <constraint firstAttribute="trailing" secondItem="KpQ-qR-Q6g" secondAttribute="trailing" id="4dC-sF-BJS"/>
+                                    <constraint firstItem="PPA-QU-SMc" firstAttribute="height" secondItem="MCl-qu-bCE" secondAttribute="height" id="7sf-Wm-9Ya"/>
+                                    <constraint firstItem="DLm-y2-aj2" firstAttribute="height" secondItem="MCl-qu-bCE" secondAttribute="height" id="FgL-KP-5yX"/>
+                                    <constraint firstItem="DLm-y2-aj2" firstAttribute="top" secondItem="MCl-qu-bCE" secondAttribute="top" id="Ia8-HV-bC1"/>
+                                    <constraint firstAttribute="height" constant="60" id="JiS-e0-dd9"/>
+                                    <constraint firstItem="MCl-qu-bCE" firstAttribute="leading" secondItem="g1j-A5-D27" secondAttribute="leading" id="Knq-av-59F"/>
+                                    <constraint firstAttribute="bottom" secondItem="MCl-qu-bCE" secondAttribute="bottom" id="O2Z-hj-MYq"/>
+                                    <constraint firstItem="PPA-QU-SMc" firstAttribute="width" secondItem="MCl-qu-bCE" secondAttribute="width" id="ZKt-M3-kgd"/>
+                                    <constraint firstItem="DLm-y2-aj2" firstAttribute="leading" secondItem="MCl-qu-bCE" secondAttribute="trailing" id="iIL-T3-kLY"/>
+                                    <constraint firstItem="PPA-QU-SMc" firstAttribute="top" secondItem="MCl-qu-bCE" secondAttribute="top" id="joC-Ll-Grc"/>
+                                    <constraint firstItem="DLm-y2-aj2" firstAttribute="width" secondItem="MCl-qu-bCE" secondAttribute="width" id="rIP-pe-UyF"/>
+                                    <constraint firstItem="KpQ-qR-Q6g" firstAttribute="leading" secondItem="PPA-QU-SMc" secondAttribute="trailing" id="sqt-wB-jEn"/>
+                                    <constraint firstItem="KpQ-qR-Q6g" firstAttribute="width" secondItem="MCl-qu-bCE" secondAttribute="width" id="uRx-3D-jfN"/>
+                                    <constraint firstItem="MCl-qu-bCE" firstAttribute="top" secondItem="g1j-A5-D27" secondAttribute="top" id="v4x-Aa-aiS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----------选择登录方式---------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gko-yj-bIk">
+                                <rect key="frame" x="76.5" y="487" width="222" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gko-yj-bIk" firstAttribute="centerX" secondItem="vmi-Ut-oIp" secondAttribute="centerX" id="Jq8-R7-7p4"/>
+                            <constraint firstItem="5xO-1D-GMw" firstAttribute="top" secondItem="g1j-A5-D27" secondAttribute="bottom" constant="60" id="cL4-9d-TGC"/>
+                            <constraint firstItem="g1j-A5-D27" firstAttribute="leading" secondItem="vmi-Ut-oIp" secondAttribute="leading" constant="30" id="iHW-Iy-iXZ"/>
+                            <constraint firstAttribute="trailing" secondItem="g1j-A5-D27" secondAttribute="trailing" constant="30" id="lNW-1o-3HJ"/>
+                            <constraint firstItem="g1j-A5-D27" firstAttribute="top" secondItem="Gko-yj-bIk" secondAttribute="bottom" constant="42" id="mki-NH-9a6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H5x-YK-89e">
+                        <barButtonItem key="rightBarButtonItem" title="关闭" id="I2M-RD-kjv"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ezk-7l-DHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="-419"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login_ico_mobile" width="60" height="60"/>
+        <image name="login_ico_qq" width="60" height="60"/>
+        <image name="login_ico_wechat" width="60" height="60"/>
+        <image name="login_ico_weibo" width="60" height="60"/>
+    </resources>
+</document>

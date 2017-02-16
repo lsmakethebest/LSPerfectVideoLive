@@ -1,0 +1,198 @@
+
+
+//
+//  LSCalendar.m
+//  LSCalendar
+//
+//  Created by 刘松 on 16/5/11.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "LSCalendar.h"
+//整体颜色
+#define LSCalendarCOLOR                                                                  \
+  [UIColor colorWithRed:30 / 255.0                                             \
+                  green:190 / 255.0                                            \
+                   blue:142 / 255.0                                            \
+                  alpha:1.000]
+#import "CalendarViewController.h"
+
+#import "CalendarDayModel.h"
+
+#define TitleButtonHeight 35
+#define LeftMargin 40
+#define AlertViewHeight 430
+#define BottomHeight 50
+@interface LSCalendar ()
+
+@property(nonatomic, strong) CalendarViewController *calendarController;
+
+@property(nonatomic, weak) UILabel *titleLabel;
+
+@property(nonatomic, weak) UIView *alertView;
+@property(nonatomic, copy) NSString *formatString;
+@property(nonatomic, copy) CalendarCallbackBlock block;
+
+@property(nonatomic, weak) UIView *bottomLine;
+@property(nonatomic, weak) UIButton *cancelButton;
+@property(nonatomic, weak) UIButton *sureButton;
+
+@property(nonatomic, strong) CalendarDayModel *dayModel;
+
+@end
+
+@implementation LSCalendar
+
+- (instancetype)initWithFrame:(CGRect)frame {
+  if (self = [super initWithFrame:frame]) {
+
+    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    self.calendarController = [[CalendarViewController alloc] init];
+    [self.calendarController setDataToDay:365 ToDateforString:nil];
+    __weak typeof(self) weakSelf = self;
+    self.calendarController.calendarblock = ^(CalendarDayModel *model) {
+      weakSelf.dayModel = model;
+
+    };
+
+    UIView *alertView = [[UIView alloc] init];
+    alertView.backgroundColor = [UIColor whiteColor];
+    alertView.layer.cornerRadius = 6;
+    alertView.layer.masksToBounds = YES;
+    [self addSubview:alertView];
+    self.alertView = alertView;
+
+    UILabel *titleLabel = [[UILabel alloc] init];
+      titleLabel.textAlignment=NSTextAlignmentCenter;
+      titleLabel.textColor=LSCalendarCOLOR;
+    [self.alertView addSubview:titleLabel];
+    self.titleLabel = titleLabel;
+
+    UIView *bottomLine = [[UIView alloc] init];
+    bottomLine.backgroundColor = [UIColor colorWithWhite:0.435 alpha:0.278];
+    [self.alertView addSubview:bottomLine];
+    self.bottomLine = bottomLine;
+
+    UIButton *cancelButton = [[UIButton alloc] init];
+    [cancelButton setTitleColor:[UIColor grayColor]
+                       forState:UIControlStateNormal];
+    cancelButton.layer.cornerRadius = 3;
+    cancelButton.backgroundColor = [UIColor whiteColor];
+    cancelButton.layer.borderColor = LSCalendarCOLOR.CGColor;
+    cancelButton.layer.borderWidth = 1;
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton addTarget:self
+                     action:@selector(dismiss)
+           forControlEvents:UIControlEventTouchUpInside];
+    [self.alertView addSubview:cancelButton];
+    self.cancelButton = cancelButton;
+
+    UIButton *sureButton = [[UIButton alloc] init];
+    [sureButton setTitleColor:[UIColor whiteColor]
+                     forState:UIControlStateNormal];
+    sureButton.layer.cornerRadius = 3;
+    sureButton.backgroundColor = LSCalendarCOLOR;
+    sureButton.layer.borderColor = LSCalendarCOLOR.CGColor;
+    sureButton.layer.borderWidth = 1;
+    [sureButton setTitle:@"确定" forState:UIControlStateNormal];
+    [sureButton addTarget:self
+                   action:@selector(sureClick)
+         forControlEvents:UIControlEventTouchUpInside];
+    [self.alertView addSubview:sureButton];
+    self.sureButton = sureButton;
+  }
+  return self;
+}
+- (void)dismiss {
+
+  [UIView animateWithDuration:0.3
+      animations:^{
+        self.alpha = 0;
+      }
+      completion:^(BOOL finished) {
+        [self removeFromSuperview];
+      }];
+}
+- (void)sureClick {
+  if (self.block) {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDate *date;
+    if (self.dayModel) {
+      date = [self.dayModel date];
+    } else {
+        date =[NSDate date]; // [self  getCurrentDate];
+    }
+
+
+    NSString *formatStr = self.formatString;
+    if (formatStr == nil) {
+      formatStr = @"yyyy-MM-dd";
+    }
+    formatter.dateFormat = formatStr;
+      formatter.locale = [NSLocale currentLocale];
+    NSString *dateString = [formatter stringFromDate:date];
+    self.block(date,dateString);
+    [self dismiss];
+  }
+}
++ (void)showWithTitle:(NSString *)title formatString:(NSString *)formatString block:(CalendarCallbackBlock)block
+{
+
+  LSCalendar *calendar = [[LSCalendar alloc] init];
+  calendar.formatString = formatString;
+  calendar.block = block;
+  CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+  CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+  calendar.frame = [UIScreen mainScreen].bounds;
+  calendar.alertView.frame =
+      CGRectMake(LeftMargin, (screenHeight - AlertViewHeight) / 2,
+                 screenWidth - LeftMargin * 2, AlertViewHeight);
+    calendar.titleLabel.text=title;
+
+  calendar.calendarController.view.frame =
+      CGRectMake(0, TitleButtonHeight , calendar.alertView.frame.size.width,
+                 AlertViewHeight - TitleButtonHeight  - BottomHeight);
+  calendar.calendarController.view.backgroundColor = [UIColor redColor];
+  [calendar.alertView addSubview:calendar.calendarController.view];
+
+  [[[UIApplication sharedApplication].windows lastObject] addSubview:calendar];
+    
+}
+
+- (void)layoutSubviews {
+  [super layoutSubviews];
+
+  CGFloat width = self.alertView.frame.size.width;
+  self.titleLabel.frame = CGRectMake(0, 0, width, TitleButtonHeight);
+  self.bottomLine.frame =
+      CGRectMake(0, self.alertView.frame.size.height - BottomHeight, width, 0.5);
+
+  CGFloat leftMargin = 20;
+  CGFloat butttonWidth = (width - 2 * leftMargin - 10) / 2;
+
+  CGFloat bottomMargin = 5;
+  CGFloat buttonHeight = 35;
+  self.cancelButton.frame =
+      CGRectMake(leftMargin,
+                 self.alertView.frame.size.height - buttonHeight - bottomMargin,
+                 butttonWidth, buttonHeight);
+  self.sureButton.frame =
+      CGRectMake(width - leftMargin - butttonWidth,
+                 self.alertView.frame.size.height - buttonHeight - bottomMargin,
+                 butttonWidth, buttonHeight);
+}
+- (NSDate *)getCurrentDate {
+  NSDate *date = [NSDate date];
+
+  NSTimeZone *zone = [NSTimeZone systemTimeZone];
+
+  NSInteger interval = [zone secondsFromGMTForDate:date];
+
+  NSDate *localeDate = [date dateByAddingTimeInterval:interval];
+  return localeDate;
+}
+- (void)dealloc {
+
+
+}
+@end

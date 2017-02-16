@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/LCSJ/!svn/ver/4869/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)
+END
+AlipayOrder.h
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)/AlipayOrder.h
+END
+PayAlertView.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)/PayAlertView.h
+END
+AlipayTool.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LCSJ/!svn/ver/3546/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)/AlipayTool.h
+END
+AlipayOrder.m
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/LCSJ/!svn/ver/2411/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)/AlipayOrder.m
+END
+PayAlertView.m
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/LCSJ/!svn/ver/2818/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)/PayAlertView.m
+END
+AlipayTool.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/LCSJ/!svn/ver/4869/LCSJ_IOS/driver/trunk/driver/driver/Function(%E5%8A%9F%E8%83%BD%E7%B1%BB)/Pay(%E6%94%AF%E4%BB%98)/AlipayTool.m
+END

@@ -1,0 +1,48 @@
+//
+//  HttpManager.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/28.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "AFNetworking.h"
+#import <Foundation/Foundation.h>
+
+typedef void (^Success)(NSDictionary* response);
+typedef void (^Failure)(NSError *error);
+
+@interface HttpManager : NSObject
+
+
+#pragma mark - 正常POST请求
+/**
+*  不带请求类型 带URL POST请求方法
+*
+*  @param url      URL
+*  @param params   参数
+*  @param success
+*  @param failure
+*
+*  @return
+*/
++ (AFHTTPRequestOperation *)POSTNormalWithURLString:(NSString *)url
+                                   parameters:(NSDictionary *)params
+                                      success:(Success)success
+                                      failure:(Failure)failure;
+#pragma mark - 上传图片
+#pragma mark - 上传图片
++ (AFHTTPRequestOperation *)uploadImage:(UIImage *)image URL:(NSString*)URL
+                                success:(Success)success
+                                failure:(Failure)failure;
+
+
+#pragma mark - 项目中使用POST请求
++ (AFHTTPRequestOperation *)POST:(NSString *)url
+                             parameters:(NSDictionary *)params
+                                success:(Success)success
+                                failure:(Failure)failure;
+#pragma mark - 请求语音验证码
++ (void)RequestAudioCodeWithPhone:(NSString *)phone;
+
+@end

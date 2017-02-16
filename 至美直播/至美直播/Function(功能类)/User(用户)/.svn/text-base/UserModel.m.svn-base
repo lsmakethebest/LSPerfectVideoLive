@@ -1,0 +1,33 @@
+
+
+//
+//  UserModel.m
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/4/28.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "UserModel.h"
+
+@implementation UserModel
+-(void)setFinishOrderNum:(int)finishOrderNum
+{
+    _finishOrderNum=finishOrderNum;
+    _finishOrrderNum=finishOrderNum;
+}
+//-(void)setTotalAssets:(int)totalAssets
+//{
+//    _totalAssets=totalAssets;
+//    _cashAccount = totalAssets;
+//}
+-(void)setIntegral:(CGFloat)integral
+{
+    _integral=integral;
+    _quotaAccount = integral;
+}
+-(BOOL)isPayPassword
+{
+    return [_payPasswordStatus isEqualToString:@"0"];
+}
+@end

@@ -1,0 +1,21 @@
+//
+//  UIButton+LSExtension.h
+//  LSCountDown
+//
+//  Created by ls on 16/1/18.
+//  Copyright © 2016年 song. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface UIButton (LSCountDown)
+
+-(void)startCountWithTime:(NSInteger)time  subTitle:(NSString*)subTitle disabledColor:(UIColor*)disabledColor;
+
+//防止高频率点击 间隔
+@property (nonatomic,assign) CGFloat ls_acceptEventInterval;
+//点击按钮时自动隐藏键盘
+@property (nonatomic,assign) BOOL ls_autoHideKeyboard;
+
+
+@end

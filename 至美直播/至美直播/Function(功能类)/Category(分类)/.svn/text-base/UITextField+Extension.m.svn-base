@@ -1,0 +1,43 @@
+
+
+//
+//  UITextField+Extension.m
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/5/1.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import "UITextField+Extension.h"
+
+@implementation UITextField (Extension)
+-(BOOL)isNullAndShowMessage
+{
+    if ([self.text isEqualToString:@""]) {
+        [MBProgressHUD showError:self.placeholder];
+        return  YES;
+    }
+    if ([self.placeholder rangeOfString:@"手机号"].length>0||[self.placeholder rangeOfString:@"电话"].length>0) {
+
+        if (self.text.length!=11) {
+
+             [MBProgressHUD showError:@"请输入正确的手机号"];
+            return YES;
+        }
+//        if (self.text.length<11) {
+//            [MBProgressHUD showError:@"手机号长度小于11位"];
+//            return YES;
+//        }
+//        if (self.text.length>11) {
+//            [MBProgressHUD showError:@"手机号长度超过11位"];
+//            return YES;
+//        }
+    }
+    return NO;
+}
+-(BOOL)isNull
+{
+    return  [self.text isEqualToString:@""];
+
+}
+@end

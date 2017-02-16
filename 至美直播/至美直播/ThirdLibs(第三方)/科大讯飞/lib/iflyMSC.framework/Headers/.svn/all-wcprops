@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers
+END
+IFlyPcmRecorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyPcmRecorder.h
+END
+IFlyDataUploader.h
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyDataUploader.h
+END
+IFlySpeechEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechEvent.h
+END
+IFlyVoiceWakeuper.h
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyVoiceWakeuper.h
+END
+IFlySpeechSynthesizerDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechSynthesizerDelegate.h
+END
+IFlySetting.h
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySetting.h
+END
+IFlySpeechSynthesizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechSynthesizer.h
+END
+IFlySpeechError.h
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechError.h
+END
+IFlySpeechConstant.h
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechConstant.h
+END
+IFlyMSC.h
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyMSC.h
+END
+IFlySpeechEvaluatorDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechEvaluatorDelegate.h
+END
+IFlyResourceUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyResourceUtil.h
+END
+IFlySpeechUnderstander.h
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechUnderstander.h
+END
+IFlyDebugLog.h
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyDebugLog.h
+END
+IFlyISVRecognizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyISVRecognizer.h
+END
+IFlySpeechEvaluator.h
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechEvaluator.h
+END
+IFlySpeechRecognizerDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechRecognizerDelegate.h
+END
+IFlyContact.h
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyContact.h
+END
+IFlySpeechUtility.h
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechUtility.h
+END
+IFlyISVDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyISVDelegate.h
+END
+IFlyRecognizerViewDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyRecognizerViewDelegate.h
+END
+IFlyUserWords.h
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyUserWords.h
+END
+IFlySpeechRecognizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlySpeechRecognizer.h
+END
+IFlyRecognizerView.h
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyRecognizerView.h
+END
+IFlyTextUnderstander.h
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyTextUnderstander.h
+END
+IFlyVoiceWakeuperDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/LCSJ/!svn/ver/5300/LCSJ_IOS/driver/trunk/driver/driver/ThirdLibs(%E7%AC%AC%E4%B8%89%E6%96%B9)/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E/lib/iflyMSC.framework/Headers/IFlyVoiceWakeuperDelegate.h
+END

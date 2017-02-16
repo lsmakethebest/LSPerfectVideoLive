@@ -1,0 +1,19 @@
+//
+//  UITextField+Extension.h
+//  kuaichengwuliu
+//
+//  Created by 刘松 on 16/5/1.
+//  Copyright © 2016年 kuaicheng. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface UITextField (Extension)
+
+-(BOOL)isNullAndShowMessage;
+@property (nonatomic,assign) BOOL isNull;
+
+@property (nonatomic,assign) int maxLength;
+
+
+@end
