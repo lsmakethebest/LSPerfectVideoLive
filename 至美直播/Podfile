@@ -27,6 +27,10 @@ pod 'LSStatusBarHUD'
 pod 'MSWeakTimer'
 
 pod 'Qiniu'
+#pod 'QNNetDiag'
+
+
+#pod 'PLShortVideoKit'
 
 
 # U-Share SDK UI模块（分享面板，建议添加）

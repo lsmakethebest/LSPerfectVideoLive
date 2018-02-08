@@ -73,8 +73,7 @@ PODS:
     - pili-librtmp (= 1.0.6)
     - PLMediaStreamingKit/Common
     - QNNetDiag (= 0.0.3)
-  - Qiniu (7.1.5):
-    - AFNetworking (~> 3)
+  - Qiniu (7.2.3):
     - HappyDNS (~> 0.3)
   - QNNetDiag (0.0.3)
   - RongCloudIMLib (2.7.3.1)
@@ -134,7 +133,7 @@ SPEC CHECKSUMS:
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
   pili-librtmp: da10df0e835f135a75696cef429cc306773dd6f6
   PLMediaStreamingKit: 64427cb01e454fede4b6d4b85df93d7279ca9ab1
-  Qiniu: 77a3dba411556a383d72d17e842345a9d4c83252
+  Qiniu: ae0fea1cc379fae1560d8748ac537e0fbeb8626e
   QNNetDiag: 90727185d3cdd4f62f92b7f9b7d586451cf745d1
   RongCloudIMLib: f12607ef8e6d84e08e1411bed0fc4879383747b4
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
@@ -142,6 +141,6 @@ SPEC CHECKSUMS:
   UMengUShare: 583ac067e747c66429d5063896da0e77c4fe7688
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: 53f4f4dbd42c67329ed9dae52ef659a245c58050
+PODFILE CHECKSUM: c361a2b700c7db8eff0ac34c080bcc38d9d53c8c
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.3.1

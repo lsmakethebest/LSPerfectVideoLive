@@ -12,6 +12,7 @@
 #import <sys/socket.h>
 #import <unistd.h>
 
+#include <sys/time.h>
 #import <netinet/in.h>
 #import <netinet/tcp.h>
 

@@ -19,7 +19,11 @@
 
 +(void)POST:(NSString *)URLString parameters:(id)parameters success:(Success)success failure:(Failure)failure
 {
-    [self POSTWithURLString:StringFormat(BASE_URL, URLString) parameters:parameters success:^(NSDictionary *response) {
+    
+    NSString *url=StringFormat(BASE_URL, URLString);
+    NSLog(@"请求地址:%@",url);
+    NSLog(@"请求参数:%@",parameters);
+    [self POSTWithURLString:url parameters:parameters success:^(NSDictionary *response) {
         if (success) {
             NSLog(@"请求结果:%@",response);
             success(response);

@@ -12,7 +12,7 @@
 #define URLKey_h
 
 
-#define  BASE_URL @"http://itiapp.cn/zhimei/php/"
+#define  BASE_URL @"http://www.itiapp.cn/zhimei/php/"
 
 #define LSQNFileHost  @"http://7xrrzh.com1.z0.glb.clouddn.com/"
 

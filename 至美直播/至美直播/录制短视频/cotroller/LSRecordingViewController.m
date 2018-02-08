@@ -440,7 +440,7 @@
 {
     //华东
     QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
-        builder.zone = [QNZone zone0];
+        builder.zone = [QNFixedZone zone0];
     }];
     
     QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];
@@ -473,7 +473,7 @@
     
     //华东
     QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
-        builder.zone = [QNZone zone0];
+        builder.zone = [QNFixedZone zone0];
     }];
     
     QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];

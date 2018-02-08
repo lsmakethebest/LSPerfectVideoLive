@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110CAC9A423188659FFAD623 /* libPods-至美直播UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF8B69B992A49AC0EB2C948 /* libPods-至美直播UITests.a */; };
 		282083D51DB5E24400BD4BEA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282083D41DB5E24400BD4BEA /* ImageIO.framework */; };
 		282083D71DB5E26C00BD4BEA /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282083D61DB5E26C00BD4BEA /* JavaScriptCore.framework */; };
 		282083D91DB5E28400BD4BEA /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 282083D81DB5E28400BD4BEA /* libicucore.tbd */; };
@@ -227,9 +228,8 @@
 		28F2EE331E1CCEF000E89915 /* LSPhoneTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2EE321E1CCEF000E89915 /* LSPhoneTextField.m */; };
 		28F2EE4B1E1CF44100E89915 /* LSRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2EE4A1E1CF44100E89915 /* LSRecordingViewController.m */; };
 		28F71BB51DC9F9FF00F59560 /* LSGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F71BB41DC9F9FF00F59560 /* LSGTMBase64.m */; };
-		4403E6E79188DD19C0874AD9 /* libPods-至美直播Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5181FA9255D57BBF87529B /* libPods-至美直播Tests.a */; };
-		65BFDC7272E3E6279F9A73EC /* libPods-至美直播.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9438C91919321DF0C69ED259 /* libPods-至美直播.a */; };
-		7028539AA33CDE0FD13B0B23 /* libPods-至美直播UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5CE379339A6BA29B7AE17B /* libPods-至美直播UITests.a */; };
+		309FEEEF7608264A1DE91C49 /* libPods-至美直播Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA061F27C8D94AA78A584EF1 /* libPods-至美直播Tests.a */; };
+		47B4976344E249B056E6E5F9 /* libPods-至美直播.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA76A72C09B1A8EB8E7959 /* libPods-至美直播.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -741,15 +741,15 @@
 		28F2EE4A1E1CF44100E89915 /* LSRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSRecordingViewController.m; sourceTree = "<group>"; };
 		28F71BB31DC9F9FF00F59560 /* LSGTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSGTMBase64.h; sourceTree = "<group>"; };
 		28F71BB41DC9F9FF00F59560 /* LSGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSGTMBase64.m; sourceTree = "<group>"; };
+		2DF8B69B992A49AC0EB2C948 /* libPods-至美直播UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-至美直播UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E87FABFFAE8101B6A032DBF /* Pods-至美直播UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-至美直播UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-至美直播UITests/Pods-至美直播UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D398951D933E44583702AAB /* Pods-至美直播Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-至美直播Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-至美直播Tests/Pods-至美直播Tests.release.xcconfig"; sourceTree = "<group>"; };
 		533E7375AF6509F3FAB918B5 /* Pods-至美直播.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-至美直播.release.xcconfig"; path = "Pods/Target Support Files/Pods-至美直播/Pods-至美直播.release.xcconfig"; sourceTree = "<group>"; };
 		80D4B798ECC4ADC7E7BB84B0 /* Pods-至美直播UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-至美直播UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-至美直播UITests/Pods-至美直播UITests.release.xcconfig"; sourceTree = "<group>"; };
 		82DE1916E8E78215D31F2FCB /* Pods-至美直播Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-至美直播Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-至美直播Tests/Pods-至美直播Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9438C91919321DF0C69ED259 /* libPods-至美直播.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-至美直播.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D5181FA9255D57BBF87529B /* libPods-至美直播Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-至美直播Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB5CE379339A6BA29B7AE17B /* libPods-至美直播UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-至美直播UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1AA76A72C09B1A8EB8E7959 /* libPods-至美直播.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-至美直播.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB06C0F9597832BBE4DFE24 /* Pods-至美直播.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-至美直播.debug.xcconfig"; path = "Pods/Target Support Files/Pods-至美直播/Pods-至美直播.debug.xcconfig"; sourceTree = "<group>"; };
+		DA061F27C8D94AA78A584EF1 /* libPods-至美直播Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-至美直播Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -768,12 +768,12 @@
 				28D1B8AD1DB4A82100F85C9E /* CoreMotion.framework in Frameworks */,
 				28D1B34E1DB08A6700F85C9E /* libssl.a in Frameworks */,
 				28D1B3981DB08A6700F85C9E /* iflyMSC.framework in Frameworks */,
-				65BFDC7272E3E6279F9A73EC /* libPods-至美直播.a in Frameworks */,
 				282084811DB60E7C00BD4BEA /* MOBFoundation.framework in Frameworks */,
 				28D1B3821DB08A6700F85C9E /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				282084821DB60E7C00BD4BEA /* SMS_SDK.framework in Frameworks */,
 				28D1B34D1DB08A6700F85C9E /* libcrypto.a in Frameworks */,
 				28D1B34C1DB08A6700F85C9E /* AlipaySDK.framework in Frameworks */,
+				47B4976344E249B056E6E5F9 /* libPods-至美直播.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +781,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4403E6E79188DD19C0874AD9 /* libPods-至美直播Tests.a in Frameworks */,
+				309FEEEF7608264A1DE91C49 /* libPods-至美直播Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,7 +789,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7028539AA33CDE0FD13B0B23 /* libPods-至美直播UITests.a in Frameworks */,
+				110CAC9A423188659FFAD623 /* libPods-至美直播UITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,9 +808,9 @@
 				28D1B8B01DB4A86E00F85C9E /* libz.tbd */,
 				28D1B8AE1DB4A86000F85C9E /* libsqlite3.tbd */,
 				28D1B8AC1DB4A82100F85C9E /* CoreMotion.framework */,
-				9438C91919321DF0C69ED259 /* libPods-至美直播.a */,
-				9D5181FA9255D57BBF87529B /* libPods-至美直播Tests.a */,
-				AB5CE379339A6BA29B7AE17B /* libPods-至美直播UITests.a */,
+				C1AA76A72C09B1A8EB8E7959 /* libPods-至美直播.a */,
+				DA061F27C8D94AA78A584EF1 /* libPods-至美直播Tests.a */,
+				2DF8B69B992A49AC0EB2C948 /* libPods-至美直播UITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2358,7 +2358,7 @@
 				TargetAttributes = {
 					28D2E34C1D5418C400943F43 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = U7SJ4KA3L8;
+						DevelopmentTeam = 929467FPP6;
 						ProvisioningStyle = Automatic;
 					};
 					28D2E3651D5418C400943F43 = {
@@ -2452,9 +2452,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-至美直播/Pods-至美直播-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/LSStatusBarHUD/LSStatusBarHUD/LSStatusBarHUD.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/WeiboSDK.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2482,13 +2495,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-至美直播-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		562D1AABBCCC1C350A784306 /* [CP] Copy Pods Resources */ = {
@@ -2527,13 +2543,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-至美直播Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		802DCC6F7458BFF961C3E9FD /* [CP] Copy Pods Resources */ = {
@@ -2572,13 +2591,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-至美直播UITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2920,7 +2942,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U7SJ4KA3L8;
+				DEVELOPMENT_TEAM = 929467FPP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2999,7 +3021,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U7SJ4KA3L8;
+				DEVELOPMENT_TEAM = 929467FPP6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
